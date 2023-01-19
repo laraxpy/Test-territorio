@@ -3,7 +3,6 @@ const router = express.Router();
 const homeController = require('../controller/homeController');
 
 module.exports= ()=>{
-    router.get('*', function(req,res){res.redirect('https://test-servidor.ddns.net')});
     router.get('/', homeController.pagInicio)
     router.get('/miterritorio', homeController.miTerritorio)
     router.get('/mapa', homeController.mapa)

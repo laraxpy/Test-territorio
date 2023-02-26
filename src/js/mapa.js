@@ -4471,7 +4471,7 @@ function onLocationError(e){
 mapa.on('locationfound', onLocationFound);
 mapa.on('locationerror', onLocationError);
 function locate () {
-  mapa.locate({setView: false, watch: true, enableHighAccuracy: true, maximumAge: 60});
+  mapa.locate({setView: false, watch: true, enableHighAccuracy: true, maximumAge: 60000});
 }
 setInterval(locate, 3000)
 

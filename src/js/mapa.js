@@ -4457,7 +4457,7 @@ import { pagInicio } from "../../controller/homeController";
 const select = document.getElementById('seleccion').addEventListener('change', function(){selectGrupo()})
 function onLocationFound(e){
   let radius = e.accuracy / 2;
-  L.marker(e.latlng).addTo(mapa).bindPopup("Mi ubicacion actual").openPopup().addTo(mapa);
+  L.marker(e.latlng).addTo(mapa).bindPopup("Mi ubicacion actual").openPopup();
   //L.circle(e.latlng, radius).addTo(mapa);
 }
 function onLocationError(e){
@@ -4465,7 +4465,7 @@ function onLocationError(e){
 }
 mapa.on('locationfound', onLocationFound);
 mapa.on('locationerror', onLocationError);
-mapa.locate({setView: false, watch: true, maxZoom: 16});
+mapa.locate({setView: false, watch: true, enableHighAccuracy: true, maximumAge: 60000});
 
 function selectGrupo(){
   layerGroup.clearLayers()

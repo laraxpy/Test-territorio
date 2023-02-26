@@ -4455,13 +4455,15 @@ import { pagInicio } from "../../controller/homeController";
   }
 
 const select = document.getElementById('seleccion').addEventListener('change', function(){selectGrupo()})
+let currentLocation;
+function locate () {
+  mapa.locate({setView: false, watch: true, enableHighAccuracy: true, maximumAge: 60000});}
 function onLocationFound(e){
-  let currentLocation;
   let radius = e.accuracy / 2;
   if(currentLocation){
     mapa.removeLayer(currentLocation);
   }
- currentLocation = L.marker(e.latlng).addTo(mapa).bindPopup("Mi ubicacion actual").openPopup();
+  currentLocation = L.marker(e.latlng).addTo(mapa).bindPopup("Mi ubicacion actual").openPopup();
   //L.circle(e.latlng, radius).addTo(mapa);
   
 }
@@ -4470,9 +4472,9 @@ function onLocationError(e){
 }
 mapa.on('locationfound', onLocationFound);
 mapa.on('locationerror', onLocationError);
-function locate () {
-  mapa.locate({setView: false, watch: true, enableHighAccuracy: true, maximumAge: 60000});
-}
+
+  
+
 setInterval(locate, 3000)
 
 

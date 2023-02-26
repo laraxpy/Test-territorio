@@ -4456,12 +4456,14 @@ import { pagInicio } from "../../controller/homeController";
 
 const select = document.getElementById('seleccion').addEventListener('change', function(){selectGrupo()})
 function onLocationFound(e){
+  let currentLocation;
   let radius = e.accuracy / 2;
-  let currentLocation = L.marker(e.latlng).addTo(mapa).bindPopup("Mi ubicacion actual").openPopup();
-  //L.circle(e.latlng, radius).addTo(mapa);
   if(currentLocation){
     mapa.removeLayer(currentLocation);
   }
+ currentLocation = L.marker(e.latlng).addTo(mapa).bindPopup("Mi ubicacion actual").openPopup();
+  //L.circle(e.latlng, radius).addTo(mapa);
+  
 }
 function onLocationError(e){
   alert(e.message);

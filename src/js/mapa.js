@@ -4463,7 +4463,7 @@ function onLocationFound(e){
   if(currentLocation){
     mapa.removeLayer(currentLocation);
   }
-  currentLocation = L.marker(e.latlng).addTo(mapa).bindPopup("Mi ubicacion actual").openPopup();
+  currentLocation = L.marker(e.latlng).addTo(mapa).bindPopup("Mi ubicacion actual");
   //L.circle(e.latlng, radius).addTo(mapa);
   
 }

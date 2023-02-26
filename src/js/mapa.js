@@ -4457,8 +4457,11 @@ import { pagInicio } from "../../controller/homeController";
 const select = document.getElementById('seleccion').addEventListener('change', function(){selectGrupo()})
 function onLocationFound(e){
   let radius = e.accuracy / 2;
-  L.marker(e.latlng).addTo(mapa).bindPopup("Mi ubicacion actual").openPopup();
+  let currentLocation = L.marker(e.latlng).addTo(mapa).bindPopup("Mi ubicacion actual").openPopup();
   //L.circle(e.latlng, radius).addTo(mapa);
+  if(currentLocation){
+    mapa.removeLayer(currentLocation);
+  }
 }
 function onLocationError(e){
   alert(e.message);

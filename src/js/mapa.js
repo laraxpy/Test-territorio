@@ -4468,7 +4468,7 @@ function onLocationFound(e){
   
 }
 function onLocationError(e){
-  alert(e.message);
+  console.log(e.message);
 }
 mapa.on('locationfound', onLocationFound);
 mapa.on('locationerror', onLocationError);

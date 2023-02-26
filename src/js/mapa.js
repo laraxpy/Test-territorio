@@ -4470,7 +4470,7 @@ function onLocationError(e){
 }
 mapa.on('locationfound', onLocationFound);
 mapa.on('locationerror', onLocationError);
-mapa.locate({setView: false, watch: true, enableHighAccuracy: true, maximumAge: 60000});
+mapa.locate({setView: false, watch: true, enableHighAccuracy: true, maximumAge: 60});
 
 function selectGrupo(){
   layerGroup.clearLayers()

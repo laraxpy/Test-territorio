@@ -4457,7 +4457,7 @@ import { pagInicio } from "../../controller/homeController";
 const select = document.getElementById('seleccion').addEventListener('change', function(){selectGrupo()})
 let currentLocation;
 function locate () {
-  mapa.locate({setView: false, watch: true, enableHighAccuracy: true, maximumAge: 60000, timeout: 10000});}
+  mapa.locate({setView: false, watch: true, enableHighAccuracy: true, maximumAge: 0});}
 function onLocationFound(e){
   let radius = e.accuracy / 2;
   if(currentLocation){
